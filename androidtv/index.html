@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video.dev.js | HTML5 Video Player</title>
+
+  <!-- Chang URLs to wherever Video.js files will be hosted -->
+  <link href="video-js.css" rel="stylesheet" type="text/css">
+  <!-- video.js must be in the <head> for older IEs to work. -->
+  <script src="video.dev.js"></script>
+
+  <!-- Unless using the CDN hosted version, update the URL to the Flash SWF -->
+  <script>
+    videojs.options.flash.swf = "video-js.swf";
+  </script>
+<script type="text/javascript" src="vast-client.js"> </script>
+<script type="text/javascript" src="vast-client-app.js"> </script>
+<script type="text/javascript" src="ezadx_player.js"> </script>
+
+</head>
+<body>
+<video id='vid'  class="video-js vjs-default-skin vjs-fullscreen" controls preload="none" />
+
+<script type="text/javascript">
+    videojs("vid", {}, function(){
+        console.log("Player Ready");
+        window.ezadx = create_ezadx(this);
+        window.ezadx.init();
+        window.ezadx.start();
+    });
+    </script>
+</body>
+</html>

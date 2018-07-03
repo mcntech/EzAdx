@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title>EzAdx Controller</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-glyphicons.css">
+
+       <script src="http://code.jquery.com/jquery.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+       <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
+       
+       <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
+       <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+</head>
+<body ng-controller="CasterController">
+	<div class="container" style="padding: 15px">
+        <div class="jumbotron">
+            <h2>EzAdX</h2>
+            <p>Digital Signage Made Easy For Small Businesses.</p>
+        </div>
+	
+        <div class="panel">
+            <div class="input-group">
+                <div class="input-group-btn">
+                   <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                       Ad Zone <span class="caret"></span>
+                   </button>
+                   <ul class="dropdown-menu">
+                       <li ng-repeat="item in availableAdZones" ng-click="setAdZone(item)">
+                           <a>{{item.name}}</a>
+                       </li>
+                   </ul>
+               </div>
+               <input type="text" class="form-control" placeholder="EzAdx Ad Zone" ng-model="selectedAdZone.url">
+          </div>
+       </div>
+        <div class="panel">
+            <div class="input-group">
+               
+                <div class="input-group-btn">
+                   <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                       Ad Interval <span class="caret"></span>
+                   </button>
+                   <ul class="dropdown-menu">
+                       <li ng-repeat="item in availableAdIntervals" ng-click="setAdInterval(item)">
+                           <a>{{item.name}}</a>
+                       </li>
+                   </ul>
+               </div>
+               <input type="text" class="form-control" placeholder="Ad Interval" ng-model="selectedAdInterval.name">
+			</div>
+		</div>               
+               
+        <div class="panel">
+           <div class="input-group">
+               <div class="input-group-btn">
+                   <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                       Main Video <span class="caret"></span>
+                   </button>
+                   <ul class="dropdown-menu">
+                       <li ng-repeat="item in availableMainStreams" ng-click="setMainStream(item)">
+                           <a>{{item.name}}</a>
+                       </li>
+                   </ul>
+               </div>
+               <input type="text" class="form-control" placeholder="EzAdx Main Stream" ng-model="selectedMainStream.url">
+           </div>
+	    </div>
+        <div class="panel">		
+           <div class="input-group">    
+		         <span class="input-group-btn">
+                   <button class="btn btn-primary" type="button" ng-click="doCast()">Cast</button>
+                 </span>
+             </div>
+		 </div>
+	    
+
+       <script type="text/javascript" src="ezadx_sender_app.js"></script>
+	</div>
+</body>
+</html>

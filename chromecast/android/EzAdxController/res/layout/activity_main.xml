@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    tools:context="com.example.ezadxcontroller.MainActivity" >
+
+    <TextView 
+	 android:text="Advertisement Channel" 
+	 android:id="@+id/TextAdChannel" 
+	 android:layout_width="match_parent"
+	 android:layout_height="wrap_content"
+	 android:layout_marginTop="20dp">
+	 </TextView>
+    
+
+    <Spinner
+        android:id="@+id/spinner_adurl"
+		android:layout_width="match_parent" 
+        android:layout_height="wrap_content" 
+		android:prompt="@string/select_adurl" 
+		android:spinnerMode="dialog"
+	 />
+
+    <TextView 
+	 android:text="Advertisement Interval" 
+	 android:id="@+id/TextAdInterval" 
+	 android:layout_width="wrap_content" 
+	 android:layout_height="wrap_content"
+ 	 android:layout_marginTop="20dp">
+	 </TextView>
+    
+    <Spinner
+        android:id="@+id/spinner_adinterval"
+		android:layout_width="match_parent" 
+        android:layout_height="wrap_content"
+  		android:prompt="@string/select_adinterval"
+  		android:spinnerMode="dialog"
+    />
+
+    <TextView 
+	 android:text="Main Channel" 
+	 android:id="@+id/TextMainChannel" 
+	 android:layout_width="wrap_content" 
+	 android:layout_height="wrap_content"
+ 	 android:layout_marginTop="20dp">	 
+	 </TextView>
+    
+    <Spinner
+        android:id="@+id/spinner_mainurl"
+		android:layout_width="match_parent" 
+        android:layout_height="wrap_content" 
+  		android:prompt="@string/select_mainurl"
+  		android:spinnerMode="dialog"        
+    />
+	<Button
+	 android:text="Configure Custom Stream" 
+	 android:id="@+id/btnConfigure" 
+	 android:layout_width="fill_parent" 
+	 android:layout_height="wrap_content"
+ 	 android:layout_marginTop="20dp">	 
+	</Button>
+    
+
+</LinearLayout>
